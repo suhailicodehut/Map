@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.myapplicationdev.android.demomap.MainActivity">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -17,6 +17,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="We now have 3 branches. Look below for the address and info" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:entries="@array/HQ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="wrap_content"

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Map</string>
+    <string-array name="HQ">
+        <item>HQ-North</item>
+        <item>HQ-Central</item>
+        <item>HQ-East</item>
+    </string-array>
 </resources>

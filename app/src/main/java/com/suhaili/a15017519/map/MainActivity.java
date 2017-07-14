@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnN,btnC,btnE;
     private GoogleMap map;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +132,43 @@ public class MainActivity extends AppCompatActivity {
 //                return true;
 //            }
 //
+        });
+        spinner = (Spinner)findViewById(R.id.spinner);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (position) {
+                    case 0://north
+                        Toast.makeText(parent.getContext(), "North!", Toast.LENGTH_SHORT).show();
+                        if (map != null){
+                            map.moveCamera(CameraUpdateFactory.newLatLngZoom(north,
+                                    15));
+                        }
+                        break;
+                    case 1://central
+                        Toast.makeText(parent.getContext(), "Central!", Toast.LENGTH_SHORT).show();
+                        if (map != null){
+                            map.moveCamera(CameraUpdateFactory.newLatLngZoom(central,
+                                    15));
+                        }
+                        break;
+                    case 2://east
+                        Toast.makeText(parent.getContext(), "East!", Toast.LENGTH_SHORT).show();
+                        if (map != null){
+                            map.moveCamera(CameraUpdateFactory.newLatLngZoom(east,
+                                    15));
+                        }
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+                // sometimes you need nothing here
+            }
         });
 
         btnN = (Button) findViewById(R.id.btnNorth);
