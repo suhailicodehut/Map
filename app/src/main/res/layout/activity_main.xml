@@ -16,7 +16,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="We now have 3 branches. Look below for the address and info" />
+        android:text="We now have 3 branches. Look below for the \n address and info" />
 
     <Spinner
         android:id="@+id/spinner"
